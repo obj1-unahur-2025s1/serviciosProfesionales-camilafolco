@@ -30,15 +30,6 @@ class EmpresaDeServicios {
   }
 }
 
-class Profesional {
-  const tipo = profesionalUniversitario
-  const estudioUniversidad = null
-
-  method tipo() = tipo
-  
-  method honorarios(){
-    
-  }
-
+class profesionalUniversitario {
 
 }
