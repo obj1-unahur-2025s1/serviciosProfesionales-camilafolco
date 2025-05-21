@@ -29,3 +29,16 @@ class EmpresaDeServicios {
     empleadosProfesionales.any({ e => e.estaAcotado()})
   }
 }
+
+class Profesional {
+  const tipo = profesionalUniversitario
+  const estudioUniversidad = null
+
+  method tipo() = tipo
+  
+  method honorarios(){
+    
+  }
+
+
+}
