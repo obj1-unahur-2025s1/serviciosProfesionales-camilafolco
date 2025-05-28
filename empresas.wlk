@@ -26,9 +26,11 @@ class Empresa {
     }
     method darServicio(unSolicitante) {
         if (self.puedeSatisfacerA(unSolicitante)){
-            const unProf = profesionales.find({p =>unSolicitante.puedeSerAtendidoPor(p)})
-            unProf.cobrar(unProf.honorarios())
+            const unProfesional = profesionales.find({p =>unSolicitante.puedeSerAtendidoPor(p)})
+            unProfesional.cobrar(unProfesional.honorarios())
             clientes.add(unSolicitante)
+        } else {
+            self.error("no puede ser atendido")
         }
     }
     method cantidadDeClientes() = clientes.size()
@@ -38,4 +40,8 @@ class Empresa {
         const profMismasProv = profesionales.filter({p => p.provinciasDondeTrabaja().asSet() == provinciasProf})
         return profMismasProv.any({p => p.honorarios() > unProfesional.honorarios()})
     }
+    // method existeOtroProfMasBarato(provincia, unProf) {
+    //   return profesionales.any({p => p.provinciasDondeTrabaja().contains(provincia)
+    //          && p.honorarios() < unProf.honorarios()})
+    //}
 }

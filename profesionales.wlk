@@ -1,3 +1,5 @@
+import universidades.*
+
 class ProfesionalVinculado {
     const property universidad
 
@@ -33,11 +35,4 @@ class ProfesionalLibre {
         totalRecaudado = (totalRecaudado - unImporte).max(0)
         unProfesional.cobrar(unImporte)
     }
-}
-
-object asociacion {
-    var totalRecaudado = 0
-
-    method recibirDonacion(unImporte) {totalRecaudado += unImporte}
-    method totalRecaudado() = totalRecaudado
 }
